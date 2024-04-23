@@ -1,19 +1,19 @@
-export class Date {
-  private _day: number;
-  private _month: number;
-  private _year: number;
-  constructor(day: number, month: number, year: number) {
+export class dateTime {
+  private _day: string;
+  private _month: string;
+  private _year: string;
+  constructor(day: string, month: string, year: string) {
     this._day = day;
     this._month = month;
     this._year = year;
   }
-  public get_day(): number {
+  public get_day(): string {
     return this._day;
   }
-  public get_month(): number {
+  public get_month(): string {
     return this._month;
   }
-  public get_year(): number {
+  public get_year(): string {
     return this._year;
   }
 }

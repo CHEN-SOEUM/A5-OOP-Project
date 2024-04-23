@@ -2,13 +2,19 @@ export enum Gender {
   male = "Male",
   female = "Female",
 }
+import { dateTime } from "../tickets/date";
 export abstract class Person {
   protected firstName: string;
   protected lastName: string;
-  protected date_of_birth: string;
+  protected date_of_birth: dateTime;
   protected gender: Gender;
 
-  constructor(firstName: string, lastName: string, dateOfBirth: string, gender: Gender) {
+  constructor(
+    firstName: string,
+    lastName: string,
+    dateOfBirth: dateTime,
+    gender: Gender
+  ) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.date_of_birth = dateOfBirth;
@@ -23,7 +29,7 @@ export abstract class Person {
     return this.lastName;
   }
 
-  public getDateOfBirth(): string {
+  public getDateOfBirth(): dateTime {
     return this.date_of_birth;
   }
 

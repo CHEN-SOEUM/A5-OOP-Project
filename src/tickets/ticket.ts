@@ -1,7 +1,8 @@
 //Import classes from files.
-import { Date } from "./date";
+import { dateTime } from "./date";
 import { Passeger } from "../passenger/passenger";
 import { Flight } from "../flight/flight";
+import { Seat } from "../airplane/seat";
 export enum TicketType {
   ecoClassic = "Economy classic",
   ecoFlex = "Economy flex",
@@ -15,15 +16,16 @@ export enum SpecialMeal {
 }
 export class Ticket {
   private ticket_number: string;
-  private departure_date: Date;
+  private departure_date: dateTime;
   private passenger: Passeger;
-  private flight: Flight[];
+  private flight: Flight[] = [];
   private payment_status: boolean;
+  private seat: Seat;
   private ticket_type: TicketType;
   private special_meal: SpecialMeal;
   constructor(
     ticket_number: string,
-    departure_date: Date,
+    departure_date: dateTime,
     passenger: Passeger,
     ticket_type: TicketType,
     special_meal: SpecialMeal
@@ -46,10 +48,16 @@ export class Ticket {
     this.flight.push(flight);
     console.log("Flight added to ticket");
   }
+  public setSeat(seat: Seat): void {
+    this.seat = seat;
+  }
+  public getSeat(): Seat {
+    return this.seat;
+  }
   public getTicketNumber(): string {
     return this.ticket_number;
   }
-  public getDepartureDate(): Date {
+  public getDepartureDate(): dateTime {
     return this.departure_date;
   }
   public getPaymentStatus(): boolean {
