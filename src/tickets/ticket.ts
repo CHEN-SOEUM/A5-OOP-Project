@@ -2,6 +2,7 @@ export enum TicketType {
   ecoClassic = "Economy classic",
   ecoFlex = "Economy flex",
   business = "Business",
+  firstClass = "First Class",
 }
 export enum SpecialMeal {
   babyMeal = "Baby Meal",
