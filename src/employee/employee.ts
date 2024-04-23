@@ -7,5 +7,18 @@ export enum Position {
   staff = "Staff",
 }
 export class Employee extends Person {
-  //To do
-}
+  private position:Position;
+  private salary:number;
+  constructor(postion:Position,salary:number){
+    super();
+    this.position = postion;
+    this.salary = salary;
+  }
+  public getSalary():number{
+    return this.salary;
+  }
+  public getPosition():string{
+    return this.position;
+  }
+} 
+ 
