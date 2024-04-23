@@ -1,3 +1,4 @@
+//Import classes from files.
 import { Date } from "./date";
 import { Passeger } from "../passenger/passenger";
 import { Flight } from "../flight/flight";
@@ -33,11 +34,11 @@ export class Ticket {
     this.ticket_type = ticket_type;
     this.special_meal = special_meal;
   }
-  public setPaymentStatus(): void {
-    if (this.payment_status == true) {
+  public setPaymentStatus(status: boolean): void {
+    if (status == this.payment_status) {
       console.log("This ticket has already been paid");
     } else {
-      this.payment_status = true;
+      this.payment_status = status;
       console.log("This ticket has been paid");
     }
   }
