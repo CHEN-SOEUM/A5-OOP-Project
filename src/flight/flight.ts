@@ -15,8 +15,11 @@ export class Flight {
   public assignSeat(seatno: Seat, plane: Airplane): void {
     for (let seat of plane.getSeat()) {
       if (seatno.getSeatNumber() == seat.getSeatNumber()) {
-        this.seat_number = seat.getSeatNumber();
-        console.log("Seat assigned");
+        if (this.seat_number == seatno.getSeatNumber()) {
+          console.log("Seat already assigned");
+        } else {
+          this.seat_number = seatno.getSeatNumber();
+        }
       } else {
         console.log("Seat doesn't exist");
       }
