@@ -12,18 +12,12 @@ export class Flight {
     this.flight_number = flight_number;
     this.take_off_date = take_off_date;
   }
-  public assignSeat(seatno: Seat, plane: Airplane): void {
-    for (let seat of plane.getSeat()) {
-      if (seatno.getSeatNumber() == seat.getSeatNumber()) {
-        if (this.seat_number == seatno.getSeatNumber()) {
-          console.log("Seat already assigned");
-        } else {
-          this.seat_number = seatno.getSeatNumber();
-        }
-      } else {
-        console.log("Seat doesn't exist");
+  public assignSeat(ticket: Ticket): void {
+    this.airplane.getSeat().forEach((seat: Seat) => {
+      if (seat.getSeatType() == ticket.getSeat().getSeatType()) {
+        this.seat_number = seat.getSeatNumber();
       }
-    }
+    });
   }
   public assignAirplane(airplane: Airplane) {
     this.airplane = airplane;
