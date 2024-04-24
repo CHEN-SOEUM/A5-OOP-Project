@@ -66,10 +66,10 @@ const airport1: Airport = new Airport(
 airport1.setPlane(plane1);
 ticket1.setFlight(flight);
 ticket1.setSeat(new Seat(1, "A1", "First Class"));
-ticket2.setSeat(new Seat(1, "A1", "First Class"));
+ticket2.setSeat(new Seat(2, "A2", "First Class"));
 flight.assignAirplane(plane1);
-flight.assignSeat(ticket1.getSeat(), plane1);
-flight.assignSeat(ticket2.getSeat(), plane1);
+flight.assignSeat(ticket1.getSeat(), ticket1);
+flight.assignSeat(ticket2.getSeat(), ticket2);
 // console.log(`This is passenger ${JSON.stringify(passenger)}`);
 // console.log(`This is tickets ${JSON.stringify(ticket1)}`);
 console.log(`This is flight ${JSON.stringify(flight)}`);
