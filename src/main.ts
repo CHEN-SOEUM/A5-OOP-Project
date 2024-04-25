@@ -49,7 +49,7 @@ const pilot1: Employee = new Employee(
 const plane1 = new Airplane(
   "LF-12",
   100,
-  [new Seat(1, "A1", "First Class")],
+  [new Seat(1, "A1", "First Class"), new Seat(2, "A2", "Economy classic")],
   [pilot1],
   new Gate("1")
 );
@@ -64,13 +64,16 @@ const airport1: Airport = new Airport(
   []
 );
 airport1.setPlane(plane1);
+airport1.addBooking(booking1);
 ticket1.setFlight(flight);
 ticket1.setSeat(new Seat(1, "A1", "First Class"));
-ticket2.setSeat(new Seat(1, "A1", "First Class"));
+ticket2.setSeat(new Seat(2, "A2", "Economy classic"));
 flight.assignAirplane(plane1);
-flight.assignSeat(ticket1.getSeat(), plane1);
-flight.assignSeat(ticket2.getSeat(), plane1);
+flight.assignSeat(ticket1);
+flight.assignSeat(ticket2);
 // console.log(`This is passenger ${JSON.stringify(passenger)}`);
 // console.log(`This is tickets ${JSON.stringify(ticket1)}`);
 console.log(flight);
 // console.log(`This is airport ${JSON.stringify(airport1)}`);
+// console.log(`This is flight ${JSON.stringify(flight)}`);
+// console.log(`This is airport ${JSON.stringify(airport1)}`

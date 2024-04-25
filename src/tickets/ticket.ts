@@ -57,6 +57,9 @@ export class Ticket {
   public getTicketNumber(): string {
     return this.ticket_number;
   }
+  public getTicketType(): string {
+    return this.ticket_type;
+  }
   public getDepartureDate(): dateTime {
     return this.departure_date;
   }
