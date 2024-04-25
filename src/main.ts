@@ -72,5 +72,5 @@ flight.assignSeat(ticket1.getSeat(), plane1);
 flight.assignSeat(ticket2.getSeat(), plane1);
 // console.log(`This is passenger ${JSON.stringify(passenger)}`);
 // console.log(`This is tickets ${JSON.stringify(ticket1)}`);
-console.log(`This is flight ${JSON.stringify(flight)}`);
+console.log(flight);
 // console.log(`This is airport ${JSON.stringify(airport1)}`);
