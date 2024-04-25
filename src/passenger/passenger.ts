@@ -1,13 +1,31 @@
-import { Person } from "../person/person";
+import { Person, Gender } from "../person/person";
 
-export class Passeger extends Person {
+export class Passenger extends Person {
   private board_status: boolean;
 
-  constructor(boardStatus: boolean) {
-  super()
-  this.board_status=boardStatus;
-}
+  constructor(firstName: string, lastName: string, dateOfBirth: string, gender: Gender, boardStatus: boolean) {
+    super(firstName, lastName, dateOfBirth, gender);
+    this.board_status = boardStatus;
+  }
+
   public getBoardStatus(): boolean {
     return this.board_status;
+  }
+
+  // Implement abstract methods
+  getFirstName(): string {
+    return this.firstName;
+  }
+
+  getLastName(): string {
+    return this.lastName;
+  }
+
+  getDateOfBirth(): string {
+    return this.date_of_birth;
+  }
+
+  getGender(): string {
+    return this.gender;
   }
 }
