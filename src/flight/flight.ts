@@ -1,3 +1,4 @@
+import { Address } from "../address/address";
 import { Airplane } from "../airplane/airplane";
 import { Seat } from "../airplane/seat";
 import { dateTime } from "../tickets/date";
@@ -6,6 +7,7 @@ export class Flight {
   private flight_number: string;
   private take_off_date: dateTime;
   private airplane: Airplane;
+  private destination: Address;
   private seat_number: string;
   private crew_schedule: boolean;
   constructor(flight_number: string, take_off_date: dateTime) {
@@ -34,11 +36,17 @@ export class Flight {
   public getSeat(): string {
     return this.seat_number;
   }
+  public setDestination(destination: Address): void {
+    this.destination = destination;
+  }
   public setCrewSchedule(status: boolean): void {
     this.crew_schedule = status;
   }
   public getFlightNumber(): string {
     return this.flight_number;
+  }
+  public getDestination(): Address {
+    return this.destination;
   }
   public getTakeOffDate(): dateTime {
     return this.take_off_date;

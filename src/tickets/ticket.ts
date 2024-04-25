@@ -57,6 +57,9 @@ export class Ticket {
   public getTicketNumber(): string {
     return this.ticket_number;
   }
+  public getFlight(): Flight[] {
+    return this.flight;
+  }
   public getTicketType(): string {
     return this.ticket_type;
   }

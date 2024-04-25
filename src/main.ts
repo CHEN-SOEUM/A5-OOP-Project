@@ -10,6 +10,8 @@ import { Passeger } from "./passenger/passenger";
 import { Ticket, TicketType, SpecialMeal } from "./tickets/ticket";
 import { Gender } from "./person/person";
 import { dateTime } from "./tickets/date";
+import { Laggage } from "./laggage/laggage";
+import { Tag } from "./laggage/tag";
 
 //Address Creation
 const address: Address = new Address("Phnom Penh", "Cambodia");
@@ -63,6 +65,7 @@ const airport1: Airport = new Airport(
   [new Gate("1")],
   []
 );
+flight.setDestination(address);
 airport1.setPlane(plane1);
 airport1.addBooking(booking1);
 ticket1.setFlight(flight);
@@ -71,9 +74,16 @@ ticket2.setSeat(new Seat(2, "A2", "Economy classic"));
 flight.assignAirplane(plane1);
 flight.assignSeat(ticket1);
 flight.assignSeat(ticket2);
+//Tag Creation
+const tag1 = new Tag("JSK");
+tag1.addPlane(ticket1);
+tag1.addStop(ticket1);
+//Laggage Creation
+const laggage1 = new Laggage("Black", "Wheeled");
+laggage1.setTag(tag1);
 // console.log(`This is passenger ${JSON.stringify(passenger)}`);
 // console.log(`This is tickets ${JSON.stringify(ticket1)}`);
-console.log(flight);
+console.log(tag1);
 // console.log(`This is airport ${JSON.stringify(airport1)}`);
 // console.log(`This is flight ${JSON.stringify(flight)}`);
 // console.log(`This is airport ${JSON.stringify(airport1)}`
