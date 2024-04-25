@@ -32,6 +32,9 @@ export class Airport {
 
   public setPlane(airplane: Airplane): void {
     this.airplane.push(airplane);
+    for(let airplanes of this.airplane){
+      console.log(airplanes.getRegisterNumber())
+    }
   }
   public addBooking(booking: Booking): void {
     this.books.push(booking);

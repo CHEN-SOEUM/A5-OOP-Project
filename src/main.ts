@@ -71,9 +71,10 @@ ticket2.setSeat(new Seat(2, "A2", "Economy classic"));
 flight.assignAirplane(plane1);
 flight.assignSeat(ticket1);
 flight.assignSeat(ticket2);
+airport1.setPlane(plane1)
 // console.log(`This is passenger ${JSON.stringify(passenger)}`);
 // console.log(`This is tickets ${JSON.stringify(ticket1)}`);
-console.log(flight);
 // console.log(`This is airport ${JSON.stringify(airport1)}`);
 // console.log(`This is flight ${JSON.stringify(flight)}`);
 // console.log(`This is airport ${JSON.stringify(airport1)}`
+
