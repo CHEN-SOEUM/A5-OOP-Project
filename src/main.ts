@@ -53,6 +53,20 @@ const plane1 = new Airplane(
   [pilot1],
   new Gate("1")
 );
+const plane2 = new Airplane(
+  "LF-128",
+  100,
+  [new Seat(1, "A1", "First Class"), new Seat(2, "A2", "Economy classic")],
+  [pilot1],
+  new Gate("1")
+);
+const plane3 = new Airplane(
+  "LF-120",
+  100,
+  [new Seat(1, "A1", "First Class"), new Seat(2, "A2", "Economy classic")],
+  [pilot1],
+  new Gate("1")
+);
 //Booking creation
 const booking1 = new Booking("DAJ", new dateTime("10", "10", "2022"));
 booking1.addTickets(ticket1);
@@ -64,6 +78,8 @@ const airport1: Airport = new Airport(
   []
 );
 airport1.setPlane(plane1);
+airport1.setPlane(plane2);
+airport1.setPlane(plane3);
 airport1.addBooking(booking1);
 ticket1.setFlight(flight);
 ticket1.setSeat(new Seat(1, "A1", "First Class"));
