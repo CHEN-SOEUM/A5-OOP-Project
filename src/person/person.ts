@@ -21,19 +21,11 @@ export abstract class Person {
     this.gender = gender;
   }
 
-  public getFirstName(): string {
-    return this.firstName;
-  }
+  abstract getFirstName(): string;
 
-  public getLastName(): string {
-    return this.lastName;
-  }
+  abstract getLastName(): string;
 
-  public getDateOfBirth(): dateTime {
-    return this.date_of_birth;
-  }
+  abstract getDateOfBirth(): dateTime;
 
-  public getGender(): string {
-    return this.gender;
-  }
+  abstract getGender(): string;
 }

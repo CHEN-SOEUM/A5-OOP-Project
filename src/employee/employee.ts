@@ -22,6 +22,18 @@ export class Employee extends Person {
     this.position = postion;
     this.salary = salary;
   }
+  public getFirstName(): string {
+    return this.firstName;
+  }
+  public getLastName(): string {
+    return this.lastName;
+  }
+  public getGender(): string {
+    return this.gender;
+  }
+  public getDateOfBirth(): dateTime {
+    return this.date_of_birth;
+  }
   public getSalary(): number {
     return this.salary;
   }
