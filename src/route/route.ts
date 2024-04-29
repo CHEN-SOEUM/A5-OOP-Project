@@ -1,30 +1,32 @@
+import { Airport } from "../airport/airport";
+
 export class Route {
   private route_number: string;
-  private from: AirPort;
-  private to: AirPort;
-  private plane: AirPlane;
+  private from: Airport;
+  private to: Airport;
+  private plane: Airport;
   constructor(route_number: string) {
     this.route_number = route_number;
   }
-  public setPlane(plane: AirPlane): void {
+  public setPlane(plane: Airport): void {
     this.plane = plane;
   }
-  public setFrom(from: AirPort): void {
+  public setFrom(from: Airport): void {
     this.from = from;
   }
-  public setTo(to: AirPort): void {
+  public setTo(to: Airport): void {
     this.to = to;
   }
   public getRouteNumber(): string {
     return this.route_number;
   }
-  public getPlane(): AirPlane {
+  public getPlane(): Airport {
     return this.plane;
   }
-  public getFrom(): AirPort {
+  public getFrom(): Airport {
     return this.from;
   }
-  public getTo(): AirPort {
+  public getTo(): Airport {
     return this.to;
   }
 }

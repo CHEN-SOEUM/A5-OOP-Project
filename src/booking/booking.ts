@@ -1,3 +1,5 @@
+import { Date } from "../date/date";
+import { Passenger } from "../passenger/passenger";
 import { Ticket } from "../ticket/ticket";
 
 export class Booking {
@@ -10,6 +12,9 @@ export class Booking {
   }
   public setPassenger(passsenger: Passenger): void {
     this.customer = passsenger;
+  }
+  public getRef(): string {
+    return this.book_ref;
   }
   public getPassenger(): Passenger {
     return this.customer;
