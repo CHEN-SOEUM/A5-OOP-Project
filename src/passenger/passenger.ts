@@ -1,40 +1,33 @@
-class Ticket {
+import { Laggage } from "../laggage/laggage";
+import { Ticket } from "../ticket/ticket";
 
+export class Passenger {
+  private ticket: Ticket[];
+  private bag?: Laggage;
+  private boardStatus: boolean;
+
+  public setTicket(tickets: Ticket[]): void {
+    this.ticket = tickets;
+  }
+
+  public addTicket(ticket: Ticket[]): void {
+    this.ticket.push(...ticket);
+  }
+
+  public getTicket(): Ticket[] {
+    return this.ticket;
+  }
+
+  public getBoardingStatus(): boolean {
+    return this.boardStatus;
+  }
+
+  public getTag(): Laggage {
+    return this.bag;
+  }
 }
 
-class Luggage {
-
-}
-
-class Passenger {
-    private ticket: Ticket[];
-    private bag?: Luggage;
-    private boardStatus: boolean;
-
-    public setTicket(tickets: Ticket[]): void {
-        this.ticket = tickets;
-    }
-
-    public addTicket(ticket: Ticket[]): void {
-        this.ticket.push(...ticket);
-    }
-
-    public getTicket(): Ticket[] {
-        return this.ticket;
-    }
-
-    public getBoardingStatus(): boolean {
-        return this.boardStatus;
-    }
-
-    public getTag(): Tag {
-        return new Tag();
-    }
-}
-
-class Tag {
-
-}
+class Tag {}
 
 // const passenger = new Passenger();
 // const ticket1 = new Ticket();

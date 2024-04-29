@@ -1,3 +1,5 @@
+import { Passenger } from "../passenger/passenger";
+
 export enum SeatType {
   ecoclassic = "Economy Classic",
   ecoplus = "Economy Flex",
@@ -11,5 +13,11 @@ export class Seat {
   constructor(seat_number: string, seat_type: SeatType) {
     this.seat_number = seat_number;
     this.seat_type = seat_type;
+  }
+  public setPassenger(passenger: Passenger): void {
+    this.passenger = passenger;
+  }
+  public getSeatNumber(): string {
+    return this.seat_number;
   }
 }
