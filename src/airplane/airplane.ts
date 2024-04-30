@@ -6,6 +6,9 @@ export class Airplane {
   constructor(register_numbers: string) {
     this.register_numbers = register_numbers;
   }
+  public getregister_numbers(): string {
+    return this.register_numbers;
+  }
   public setSeat(seat: Seat[]) {
     this.seats = seat;
   }
