@@ -22,6 +22,13 @@ export class Airport {
     this.employees.push(employee);
   }
   public setPlanes(plane: Airplane): void {
+    for(let planes of this.planes){
+      if(planes.getregister_numbers() == plane.getregister_numbers()){
+        console.log('this plane is already registered');
+      }else{
+        console.log('you can register this plane'); 
+      }
+    } 
     this.planes.push(plane);
   }
   public addBooking(booking: Booking): void {

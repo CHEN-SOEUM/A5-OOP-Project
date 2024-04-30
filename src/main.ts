@@ -76,7 +76,7 @@ airport1.addBooking(booking1);
 airport1.setPlanes(airplane1)
 flight1.addPassenger(passenger1);
 
-console.log(airport1.getPlanes());
+airport1.setPlanes(airplane2)
 
 //User story 1
 // console.log(
@@ -93,5 +93,5 @@ console.log(airport1.getPlanes());
 //User Story 3
 // console.log(pilot1.getFlightByDate(new Date("29", "04", "2024")));
 //User Story 4
-console.log(flight1.getTotalFood())
+// console.log(flight1.getTotalFood())
 
