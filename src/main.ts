@@ -13,7 +13,7 @@ import { Employee, Position } from "./employee/employee";
 import { Passenger } from "./passenger/passenger";
 import { Pilot } from "./pilot/pilot";
 
-//Intialize test
+//Initialize test
 
 //Create Address
 const address1 = new Address("Phnom Penh", "Cambodia");
@@ -87,4 +87,6 @@ flight1.addPassenger(passenger1);
 //   )}`
 // );
 //User Story 3
-console.log(pilot1.getFlightByDate(new Date("29", "04", "2024")));
+// console.log(pilot1.getFlightByDate(new Date("29", "04", "2024")));
+//User Story 4
+console.log(flight1.getTotalFood())

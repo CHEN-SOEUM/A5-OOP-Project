@@ -34,6 +34,17 @@ export class Flight {
     }
     return passsengers;
   }
+  public getTotalFood():number{
+    let total:number=0
+    for(let food of this.passenger) {
+      for (let ticket of food.getTicket()){
+        if (ticket.getTicketType() == "Normal") {
+          total+=1
+        }
+      }
+    }
+    return total
+  }
   public getPassenger(): Passenger[] {
     return this.passenger;
   }
