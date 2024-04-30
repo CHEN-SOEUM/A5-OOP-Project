@@ -32,7 +32,7 @@ export class Airport {
     }
   }
   public getPlanes(): Airplane[] {
-    return this.planes;
+    return this.planes;    
   }
   public getGates(): Gate[] {
     return this.gates;

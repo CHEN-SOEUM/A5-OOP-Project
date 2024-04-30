@@ -73,7 +73,11 @@ pilot1.setFlight(flight2);
 const booking1 = new Booking("JSK123", new Date("12", "05", "1999"));
 booking1.setPassenger(passenger1);
 airport1.addBooking(booking1);
+airport1.setPlanes(airplane1)
 flight1.addPassenger(passenger1);
+
+console.log(airport1.getPlanes());
+
 //User story 1
 // console.log(
 //   `This is getting booking by ref ${JSON.stringify(
@@ -90,3 +94,4 @@ flight1.addPassenger(passenger1);
 // console.log(pilot1.getFlightByDate(new Date("29", "04", "2024")));
 //User Story 4
 console.log(flight1.getTotalFood())
+
