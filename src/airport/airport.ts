@@ -2,10 +2,12 @@ import { Address } from "../address/address";
 import { Airplane } from "../airplane/airplane";
 import { Booking } from "../booking/booking";
 import { Gate } from "./gate";
+import {Employee} from "../employee/employee";
 export class Airport {
   private name: string;
   private location: Address;
   private planes: Airplane[];
+  private employees: Employee[];
   private gates: Gate[];
   private bookings: Booking[];
   constructor(name: string, location: Address) {
@@ -14,6 +16,10 @@ export class Airport {
     this.planes = [];
     this.bookings = [];
     this.gates = [];
+    this.employees = [];
+  }
+  public addEmployee(employee: Employee): void {
+    this.employees.push(employee);
   }
   public setPlanes(plane: Airplane): void {
     this.planes.push(plane);
@@ -36,5 +42,12 @@ export class Airport {
   }
   public getGates(): Gate[] {
     return this.gates;
+  }
+  public getTotalSalary():number{
+    let sum = 0;
+    for (let employee of this.employees) {
+      sum+=employee.getSalary()
+    }
+    return sum;
   }
 }
