@@ -13,11 +13,13 @@ import { Employee, Position } from "./employee/employee";
 import { Passenger } from "./passenger/passenger";
 import { Pilot } from "./pilot/pilot";
 import {Gate} from "./airport/gate";
+import {BoardingPass} from "./boarding-pass/boarding_pass";
 
 //Initialize test
 
 //Create Address
 const address1 = new Address("Phnom Penh", "Cambodia");
+const address2 = new Address("Siem Reap", "Cambodia");
 //Create Gate
 const gate1 = new Gate("AK47");
 //Create Airport
@@ -38,6 +40,10 @@ flight2.setTakeOffDate(new Date("29", "04", "2024"));
 //Create Trip
 const trip1 = new Trip("Day off");
 const trip2 = new Trip("Vacation");
+//Create Boarding Pass
+const boarding_pass1=new BoardingPass("JSiK",airplane1,"CAM")
+const boarding_pass2=new BoardingPass("JSiK",airplane1,"TH")
+const boarding_pass3=new BoardingPass("JSiK",airplane1,"JAP")
 //Create Ticket
 const ticket1 = new Ticket(
   "123456789",
@@ -53,6 +59,8 @@ const ticket2 = new Ticket(
   150,
   Meal.normal
 );
+ticket1.setFrom(address1)
+ticket2.setFrom(address1)
 //Create Passenger
 const passenger1 = new Passenger(
   "James Moris",
@@ -101,3 +109,4 @@ airplane1.setGate(gate1)
 //User Story 5
 // console.log(airport1.getTotalSalary())
 //User Story 6
+console.log(boarding_pass1.getPlane().getGates())

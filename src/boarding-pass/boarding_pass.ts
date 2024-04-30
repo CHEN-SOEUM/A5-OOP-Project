@@ -1,6 +1,6 @@
 import { Airplane } from "../airplane/airplane";
 
-class BoardingPass {
+export class BoardingPass {
     private _boarding_id: string;
     private _plane: Airplane;
     private _country_code: string;

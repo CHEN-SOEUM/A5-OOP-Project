@@ -1,4 +1,5 @@
 import { Flight } from "../flight/flight";
+import {Address} from "../address/address";
 
 export enum TicketType {
   normal = "Normal",
@@ -20,6 +21,8 @@ export class Ticket {
   private ticket_type: TicketType;
   private ticket_class: TicketClass;
   private meal: Meal;
+  private from:Address
+  private to:Address
   private flight: Flight[];
   private ticket_price: number;
   constructor(
@@ -37,6 +40,12 @@ export class Ticket {
   }
   public setPlane(flight: Flight[]): void {
     this.flight = flight;
+  }
+  public setFrom(address: Address): void {
+    this.from = address;
+  }
+  public setTo(address: Address): void {
+    this.to = address;
   }
   public getFlight(): Flight[] {
     return this.flight;
