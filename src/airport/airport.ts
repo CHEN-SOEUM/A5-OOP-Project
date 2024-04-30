@@ -26,7 +26,8 @@ export class Airport {
       if(planes.getregister_numbers() == plane.getregister_numbers()){
         console.log('this plane is already registered');
       }else{
-        console.log('you can register this plane'); 
+        this.planes.push(plane)
+        console.log('Plane added')
       }
     } 
     this.planes.push(plane);
