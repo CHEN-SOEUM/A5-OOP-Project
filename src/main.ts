@@ -92,6 +92,7 @@ airport1.addBooking(booking1);
 airport1.setPlanes(airplane1)
 flight1.addPassenger(passenger1);
 airport1.setPlanes(airplane2)
+flight1.checkPassenger();
 
 //User story 1
 // console.log(
@@ -114,6 +115,6 @@ airport1.setPlanes(airplane2)
 //User Story 6
 // console.log(boarding_pass1.getPlane().getGates())
 //User Story 7
-ticket1.generatePass()
-console.log(ticket1.getBoardingPass())
+// ticket1.generatePass()
+// console.log(ticket1.getBoardingPass())
 
