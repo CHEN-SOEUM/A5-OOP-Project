@@ -54,4 +54,17 @@ export class Flight {
   public getTakeOffDate(): Date {
     return this.take_off_date;
   }
+  public checkPassenger(): void {
+    let check: boolean = false;
+    let i = 0;
+    while (i<this.passenger.length && this.passenger[i].getBoardingStatus() ==true){
+      check = true;
+      i++
+    }
+    if(check){
+      console.log('Plane is ready to take off');
+    }else{
+      console.log('Plane is not ready');   
+    }
+  }
 }
