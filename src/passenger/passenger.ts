@@ -41,4 +41,7 @@ export class Passenger extends Person {
   public getDateOfBirth(): Date {
     return this.date_of_birth;
   }
+  public setBoardStatus(status: boolean): void {
+    this.boardStatus = status
+  }
 }
