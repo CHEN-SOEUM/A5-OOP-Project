@@ -23,6 +23,9 @@ export class Flight {
   public getFlightNumber(): string {
     return this.flight_number;
   }
+  public getRoute():Route{
+    return this.route;
+  }
   public getReturnTicketPass(): Passenger[] {
     let passsengers: Passenger[] = [];
     for (let pass of this.passenger) {

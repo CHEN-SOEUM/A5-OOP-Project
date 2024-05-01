@@ -1,14 +1,15 @@
 import { Airport } from "../airport/airport";
+import {Airplane} from "../airplane/airplane";
 
 export class Route {
   private route_number: string;
   private from: Airport;
   private to: Airport;
-  private plane: Airport;
+  private plane: Airplane;
   constructor(route_number: string) {
     this.route_number = route_number;
   }
-  public setPlane(plane: Airport): void {
+  public setPlane(plane: Airplane): void {
     this.plane = plane;
   }
   public setFrom(from: Airport): void {
@@ -20,7 +21,7 @@ export class Route {
   public getRouteNumber(): string {
     return this.route_number;
   }
-  public getPlane(): Airport {
+  public getPlane(): Airplane {
     return this.plane;
   }
   public getFrom(): Airport {

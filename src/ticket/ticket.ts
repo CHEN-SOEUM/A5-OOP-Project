@@ -1,5 +1,7 @@
 import { Flight } from "../flight/flight";
 import {Address} from "../address/address";
+import {BoardingPass} from "../boarding-pass/boarding_pass";
+
 
 export enum TicketType {
   normal = "Normal",
@@ -24,6 +26,7 @@ export class Ticket {
   private from:Address
   private to:Address
   private flight: Flight[];
+  private boarding_pass:BoardingPass[]
   private ticket_price: number;
   constructor(
     ticket_id: string,
@@ -37,6 +40,7 @@ export class Ticket {
     this.ticket_class = ticket_class;
     this.ticket_price = price;
     this.meal = meal;
+    this.boarding_pass=[]
   }
   public setPlane(flight: Flight[]): void {
     this.flight = flight;
@@ -46,6 +50,14 @@ export class Ticket {
   }
   public setTo(address: Address): void {
     this.to = address;
+  }
+  public generatePass():void{
+    for (let flight of this.flight) {
+      this.boarding_pass.push(new BoardingPass("SK1",flight.getRoute().getPlane(),"CAM"))
+    }
+  }
+  public getBoardingPass():BoardingPass[]{
+    return this.boarding_pass;
   }
   public getFlight(): Flight[] {
     return this.flight;

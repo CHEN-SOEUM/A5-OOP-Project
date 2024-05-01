@@ -10,8 +10,8 @@ export class Booking {
     this.book_ref = book_ref;
     this.book_date = book_date;
   }
-  public setPassenger(passsenger: Passenger): void {
-    this.customer = passsenger;
+  public setPassenger(passenger: Passenger): void {
+    this.customer = passenger;
   }
   public getRef(): string {
     return this.book_ref;

@@ -4,7 +4,6 @@ export class BoardingPass {
     private _boarding_id: string;
     private _plane: Airplane;
     private _country_code: string;
-
     constructor(boarding_id: string, plane: Airplane, country_code: string) {
         this._boarding_id = boarding_id;
         this._plane = plane;

@@ -13,6 +13,7 @@ import { Employee, Position } from "./employee/employee";
 import { Passenger } from "./passenger/passenger";
 import { Pilot } from "./pilot/pilot";
 import {BoardingPass} from "./boarding-pass/boarding_pass";
+import {Gate} from "./airport/gate";
 
 //Initialize test
 
@@ -25,15 +26,21 @@ const airport2 = new Airport("Siem Reap", address1);
 //Create Airplane
 const airplane1 = new Airplane("Airbus A380");
 const airplane2 = new Airplane("Boeing 747");
+airplane1.setGate(new Gate("SAK"));
+airplane2.setGate(new Gate("SASS"));
 //Create Routes
 const route1 = new Route("JSK12");
 const route2 = new Route("JSK15");
+route1.setPlane(airplane1)
+route2.setPlane(airplane2)
 
 //Create Flight
 const flight1 = new Flight("JSK");
 const flight2 = new Flight("SRC");
 flight1.setTakeOffDate(new Date("29", "04", "2024"));
 flight2.setTakeOffDate(new Date("29", "04", "2024"));
+flight1.setRoute(route1)
+flight2.setRoute(route2)
 //Create Trip
 const trip1 = new Trip("Day off");
 const trip2 = new Trip("Vacation");
@@ -57,6 +64,7 @@ const ticket2 = new Ticket(
   Meal.normal
 );
 ticket1.setFrom(address1)
+ticket1.setPlane([flight1,flight2])
 ticket2.setFrom(address1)
 //Create Passenger
 const passenger1 = new Passenger(
@@ -105,4 +113,7 @@ airport1.setPlanes(airplane2)
 // console.log(airport1.getTotalSalary())
 //User Story 6
 // console.log(boarding_pass1.getPlane().getGates())
+//User Story 7
+ticket1.generatePass()
+console.log(ticket1.getBoardingPass())
 
