@@ -117,4 +117,3 @@ flight1.checkPassenger();
 //User Story 7
 // ticket1.generatePass()
 // console.log(ticket1.getBoardingPass())
-
