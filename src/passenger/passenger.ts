@@ -32,6 +32,9 @@ export class Passenger extends Person {
   public getTag(): Laggage {
     return this.bag;
   }
+  public addBag(bag:Laggage):void{
+    this.bag=bag
+  }
   public getName(): string {
     return this.name;
   }

@@ -14,6 +14,9 @@ import { Passenger } from "./passenger/passenger";
 import { Pilot } from "./pilot/pilot";
 import {BoardingPass} from "./boarding-pass/boarding_pass";
 import {Gate} from "./airport/gate";
+import {Laggage} from "./laggage/laggage";
+import {Tag} from "./laggage/tag";
+import {flight} from "./laggage/tag";
 
 //Initialize test
 
@@ -41,6 +44,9 @@ flight1.setTakeOffDate(new Date("29", "04", "2024"));
 flight2.setTakeOffDate(new Date("29", "04", "2024"));
 flight1.setRoute(route1)
 flight2.setRoute(route2)
+//Create Bag
+const lagage1=new Laggage("Red")
+
 //Create Trip
 const trip1 = new Trip("Day off");
 const trip2 = new Trip("Vacation");
@@ -75,6 +81,13 @@ const passenger1 = new Passenger(
 passenger1.addTicket(ticket1);
 passenger1.addTicket(ticket2);
 
+const tag1=new Tag("OO1JS","JSK")
+let flights:flight[]=[]
+for (let item of ticket1.getFlight()){
+    let items={flightNumber:item.getFlightNumber(),code:item.getRoute().getPlane().getregister_numbers()}
+    flights.push(items)
+}
+tag1.setFlight(flights)
 //Create Pilot
 const pilot1 = new Pilot(
   "Jame",
@@ -85,6 +98,7 @@ const pilot1 = new Pilot(
 );
 pilot1.setFlight(flight1);
 pilot1.setFlight(flight2);
+lagage1.addTag(tag1)
 //Create Booking
 const booking1 = new Booking("JSK123", new Date("12", "05", "1999"));
 booking1.setPassenger(passenger1);
@@ -93,13 +107,10 @@ airport1.setPlanes(airplane1)
 flight1.addPassenger(passenger1);
 airport1.setPlanes(airplane2)
 flight1.checkPassenger();
+passenger1.addBag(lagage1)
 
 //User story 1
-// console.log(
-//   `This is getting booking by ref ${JSON.stringify(
-//     airport1.getBookingRef("JSK123")
-//   )}`
-// );
+console.log(airport1.getBookingRef("JSK123"));
 // User Story 2
 // console.log(
 //   `These are passenger with return ticket ${JSON.stringify(
@@ -117,3 +128,4 @@ flight1.checkPassenger();
 //User Story 7
 // ticket1.generatePass()
 // console.log(ticket1.getBoardingPass())
+

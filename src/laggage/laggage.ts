@@ -6,6 +6,9 @@ export class Laggage {
   constructor(color: string) {
     this.color = color;
   }
+  public addTag(tag:Tag):void{
+    this.tag=tag
+  }
   public getColor(): string {
     return this.color;
   }
