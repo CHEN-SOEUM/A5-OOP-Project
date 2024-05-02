@@ -2,16 +2,13 @@ import { Flight } from "../flight/flight";
 
 export class Tag {
   private tag_id: string;
-  private flights: Flight[];
-  constructor(tag_id: string) {
+  private code:string
+  constructor(tag_id: string, code:string) {
     this.tag_id = tag_id;
-    this.flights = [];
+    this.code=code
   }
-  public addFlight(flight: Flight): void {
-    this.flights.push(flight);
-  }
-  public getFlights(): Flight[] {
-    return this.flights;
+  public getCode(): string {
+    return this.code;
   }
   public getTagId(): string {
     return this.tag_id;
