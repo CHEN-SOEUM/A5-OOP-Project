@@ -6,7 +6,7 @@ export class FlightAttendant {
     constructor() {
         this.join_flight = [];
     }
-    public setFlight(flight): void{
+    public setFlight(flight:Flight): void{
         this.join_flight.push(flight);
     }
     public getFlight():Flight[]{
