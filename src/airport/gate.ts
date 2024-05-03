@@ -3,7 +3,7 @@ export class Gate {
   constructor(_number: string) {
     this._number = _number;
   }
-  get number(): string {
+ public gateNumber(): string {
     return this._number;
   }
 }

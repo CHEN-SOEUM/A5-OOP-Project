@@ -32,6 +32,9 @@ export class Passenger extends Person {
   public getTag(): Laggage {
     return this.bag;
   }
+  public addBag(bag:Laggage):void{
+    this.bag=bag
+  }
   public getName(): string {
     return this.name;
   }
@@ -40,5 +43,8 @@ export class Passenger extends Person {
   }
   public getDateOfBirth(): Date {
     return this.date_of_birth;
+  }
+  public setBoardStatus(status: boolean): void {
+    this.boardStatus = status
   }
 }
