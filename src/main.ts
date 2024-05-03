@@ -110,7 +110,7 @@ flight1.checkPassenger();
 passenger1.addBag(lagage1)
 
 //User story 1
-console.log(airport1.getBookingRef("JSK123"));
+// console.log(airport1.getBookingRef("JSK123"));
 // User Story 2
 // console.log(
 //   `These are passenger with return ticket ${JSON.stringify(
